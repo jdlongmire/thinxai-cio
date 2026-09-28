@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virtual CIO on Demand — Independent technology leadership | ThinxAI</title>
+<meta name="description" content="Your independent CIO function, available on demand. Vendor-neutral technology leadership by James (JD) Longmire — with governed AI acceleration and audit-ready evidence.">
+<style>
+:root{
+  --navy:#1e2456; --navy2:#141a3d; --amber:#e9a13b; --amber-d:#c9842a;
+  --ink:#1a1f36; --muted:#5b6280; --bg:#f7f8fc; --card:#ffffff; --line:#e6e9f2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.top{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:10}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:18px;letter-spacing:.2px}
+.brand span{color:var(--amber)}
+nav.topnav a{color:#cfd4ea;text-decoration:none;margin-left:22px;font-size:14.5px}
+nav.topnav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--amber);color:#231a05!important;font-weight:700;padding:13px 28px;border-radius:8px;text-decoration:none;font-size:16px;border:0;cursor:pointer}
+.btn:hover{background:var(--amber-d)}
+.btn.ghost{background:transparent;color:var(--navy)!important;border:2px solid var(--navy)}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#232a5e 100%);color:#fff;padding:84px 0 72px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.15;max-width:16em;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lede{font-size:19px;color:#c9cfe8;max-width:34em;margin:20px 0 32px}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero .note{margin-top:18px;font-size:13.5px;color:#9aa1c4}
+section{padding:72px 0}
+section.alt{background:var(--bg)}
+h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.4px;margin-bottom:14px;color:var(--navy)}
+.sub{color:var(--muted);font-size:18px;max-width:38em;margin-bottom:40px}
+.grid{display:grid;gap:22px}
+.grid.c2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid.c3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px}
+.card h3{font-size:19px;color:var(--navy);margin-bottom:10px}
+.card p{color:var(--muted);font-size:15.5px}
+.card .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--amber-d);margin-bottom:8px}
+.pillar{border-top:4px solid var(--amber)}
+.problem-list{list-style:none;margin-top:8px}
+.problem-list li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16.5px;color:var(--ink)}
+.problem-list li:last-child{border:0}
+.problem-list strong{color:var(--navy)}
+.offer{background:var(--navy);color:#fff;border-radius:16px;padding:36px}
+.offer h3{font-size:22px;margin-bottom:6px}
+.offer .price{font-size:15px;color:var(--amber);font-weight:700;margin-bottom:14px}
+.offer ul{list-style:none;margin:14px 0}
+.offer ul li{padding:7px 0 7px 26px;position:relative;color:#d6dbee;font-size:15px}
+.offer ul li::before{content:"✓";position:absolute;left:2px;color:var(--amber);font-weight:700}
+.offer p{color:#aab0d2;font-size:14.5px}
+.tiers .card .price{font-size:15px;font-weight:700;color:var(--amber-d);margin-bottom:12px}
+.tiers ul{list-style:none;margin-top:12px}
+.tiers ul li{padding:6px 0;color:var(--muted);font-size:15px;border-top:1px dashed var(--line)}
+.about{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap}
+.about .bio{flex:1;min-width:280px}
+.about .bio p{color:var(--muted);margin-bottom:14px;font-size:16px}
+.creds{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;min-width:280px;flex:0 1 320px}
+.creds h4{color:var(--navy);margin-bottom:12px;font-size:16px}
+.creds ul{list-style:none}
+.creds li{font-size:14.5px;color:var(--muted);padding:6px 0 6px 24px;position:relative}
+.creds li::before{content:"◆";position:absolute;left:2px;color:var(--amber);font-size:11px;top:10px}
+.faq details{border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-bottom:12px;background:#fff}
+.faq summary{font-weight:700;color:var(--navy);cursor:pointer;font-size:16px}
+.faq p{color:var(--muted);margin-top:10px;font-size:15.5px}
+.cta-band{background:linear-gradient(135deg,var(--navy),#2a3270);color:#fff;text-align:center;padding:80px 0}
+.cta-band h2{color:#fff}
+.cta-band p{color:#c9cfe8;max-width:32em;margin:0 auto 30px;font-size:18px}
+footer{background:var(--navy2);color:#8b92b8;padding:36px 0;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:#b9c0e4}
+@media(max-width:640px){nav.topnav{display:none}section{padding:52px 0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">ThinxAI <span>·</span> Virtual CIO on Demand</div>
+    <nav class="topnav">
+      <a href="#why">Why independent</a>
+      <a href="#offers">Assessments</a>
+      <a href="#retainers">Retainers</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn" style="padding:9px 18px;font-size:14px">Start a conversation</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Your independent CIO function, <em>available on demand.</em></h1>
+    <p class="lede">Executive technology leadership for mid-market organizations — vendor-neutral judgment, AI-accelerated delivery, and audit-ready evidence. Without the full-time CIO price tag, and without a reseller's agenda.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contact">Start a conversation</a>
+      <a class="btn ghost" style="color:#fff!important;border-color:#8b92b8" href="#offers">See entry assessments</a>
+    </div>
+    <p class="note">Founder-led practice · Currently accepting a small number of advisory clients</p>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <h2>Technology decisions need an owner, not a vendor</h2>
+    <p class="sub">Mid-market organizations carry enterprise-grade technology risk — AI sprawl, cyber exposure, compliance pressure, vendor complexity — but rarely have an executive accountable for it.</p>
+    <ul class="problem-list">
+      <li><strong>A full-time CIO is excessive</strong> before the workload warrants it, yet the decisions can't wait.</li>
+      <li><strong>An MSP's "vCIO" may be tied to products it resells</strong> — a provider paid to sell products has an embedded incentive when it also claims to be your independent strategic adviser.</li>
+      <li><strong>Short consulting projects end</strong> — and nobody remains accountable for the outcomes.</li>
+      <li><strong>Shadow AI is already inside your walls.</strong> Somebody needs to inventory it, govern it, and answer for it.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Four things you won't get anywhere else</h2>
+    <p class="sub">The practice is built on a simple thesis: independent executive judgment with evidence — accelerated by AI, never replaced by it.</p>
+    <div class="grid c2">
+      <div class="card pillar">
+        <div class="tag">Independent</div>
+        <h3>No products to push</h3>
+        <p>No reseller commissions, no referral fees, no implementation quota. Material purchases get competing bids, relationships get written disclosure, and you own the roadmap and the evidence.</p>
+      </div>
+      <div class="card pillar">
+        <div class="tag">Executive-led</div>
+        <h3>A principal who answers for the advice</h3>
+        <p>Led by James (JD) Longmire, Senior Technical Fellow in aerospace and defense — enterprise architecture, technology strategy, and board-level communication, not account management with a new title.</p>
+      </div>
+      <div class="card pillar">
+        <div class="tag">AI-accelerated</div>
+        <h3>Continuous analysis at mid-market economics</h3>
+        <p>ThinxAI accelerates research, monitoring, drafting, and reporting under human review — so a smaller firm gets an operating cadence that used to require an enterprise staff. Cost-aware model routing keeps the economics sane.</p>
+      </div>
+      <div class="card pillar">
+        <div class="tag">Evidence-producing</div>
+        <h3>Decisions that leave a reviewable trail</h3>
+        <p>Every engagement produces a decision and execution record your leadership, insurers, customers, and auditors can inspect. Evidence, not theater.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="offers">
+  <div class="wrap">
+    <h2>Start with a fixed-fee diagnostic</h2>
+    <p class="sub">Two paid assessments. No free strategy sessions that turn into sales calls — you get facts, a risk register, and a sequenced plan whether or not we work together afterward.</p>
+    <div class="grid c2">
+      <div class="offer">
+        <h3>Shadow-AI Governance Audit</h3>
+        <div class="price">~$5,000 fixed fee · 2–3 weeks</div>
+        <ul>
+          <li>Executive and user interviews</li>
+          <li>AI tool and use-case inventory</li>
+          <li>Data-flow and access review</li>
+          <li>Risk classification and control gaps</li>
+          <li>Governance policy draft</li>
+        </ul>
+        <p>Deliverables: usage inventory, prioritized risk register, policy draft, 30/60/90-day action plan.</p>
+      </div>
+      <div class="offer">
+        <h3>Cyber-Insurance Readiness Assessment</h3>
+        <div class="price">~$7,500 fixed fee · 2–3 weeks</div>
+        <ul>
+          <li>Questionnaire and policy review</li>
+          <li>MFA, backup, monitoring, and testing evidence</li>
+          <li>Control ownership and exception review</li>
+          <li>Insurer and broker requirement mapping</li>
+          <li>Remediation dependency analysis</li>
+        </ul>
+        <p>Deliverables: readiness gap analysis, evidence index, prioritized remediation roadmap, executive decision brief.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="retainers" class="alt">
+  <div class="wrap">
+    <h2>Ongoing leadership, sized to your needs</h2>
+    <p class="sub">Assessments convert into retainers defined by governance intensity — from monthly strategy to full operating ownership.</p>
+    <div class="grid c3 tiers">
+      <div class="card">
+        <div class="tag">Tier 1</div>
+        <h3>Advise</h3>
+        <div class="price">$3,500–$7,500 / month</div>
+        <ul>
+          <li>Monthly strategy session</li>
+          <li>Quarterly technology roadmap</li>
+          <li>Twelve-month IT budget</li>
+          <li>Vendor contract reviews</li>
+          <li>Board-ready quarterly review</li>
+          <li>On-call access within defined windows</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">Tier 2 · Primary offer</div>
+        <h3>Operate</h3>
+        <div class="price">$8,500–$15,000 / month</div>
+        <ul>
+          <li>Everything in Advise</li>
+          <li>Weekly governance cadence</li>
+          <li>Continuous policy &amp; compliance posture</li>
+          <li>AI-governance rollout</li>
+          <li>Change management</li>
+          <li>Vendor selection &amp; negotiation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">Tier 3</div>
+        <h3>Transform</h3>
+        <div class="price">Scoped engagement</div>
+        <ul>
+          <li>Full AI strategy</li>
+          <li>Operating-model redesign</li>
+          <li>Portfolio rationalization</li>
+          <li>Governance implementation</li>
+          <li>Priced by outcomes and phases</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:28px;color:var(--muted);font-size:15px;max-width:44em">Every engagement, from day 30 to day 90: current-state facts and key risks → target posture with options and budget ranges → prioritized roadmap with owners, measures, and governance cadence. Pricing shown is the planning range; final terms are confirmed in writing before work begins.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>Who's behind it</h2>
+    <div class="about">
+      <div class="bio">
+        <p><strong>James (JD) Longmire</strong> is a Senior Technical Fellow in the aerospace and defense sector and an independent researcher, working at the intersection of enterprise architecture, AI systems, and technology governance.</p>
+        <p>He holds the client relationship and the decision accountability personally: he sets priorities, chairs governance, makes recommendations, and owns the quality of the record. ThinxAI — his AI delivery capability — prepares the analysis and artifacts under his review. It does not hold independent authority.</p>
+        <p>The practice serves organizations of roughly 20–150 employees and $10M–$1B in revenue, with particular depth in regulated and complexity-heavy environments: healthcare, financial services, legal and professional services, manufacturing, nonprofits, and the defense industrial base.</p>
+      </div>
+      <div class="creds">
+        <h4>Working credentials</h4>
+        <ul>
+          <li>Senior Technical Fellow, Aerospace &amp; Defense</li>
+          <li>Enterprise architecture &amp; technology strategy</li>
+          <li>AI systems research and governance</li>
+          <li>ORCID: 0009-0009-1383-7698</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt faq">
+  <div class="wrap">
+    <h2>Straight answers</h2>
+    <p class="sub">The questions a careful buyer should ask.</p>
+    <details>
+      <summary>How are you different from my MSP's vCIO?</summary>
+      <p>An MSP earns margin selling and operating products. When the same firm claims to be your independent strategic adviser, the incentive is embedded. This practice takes no commissions and no referral fees, discloses any prior vendor relationships in writing, and gets competing bids on material purchases. The advice and the product sale are structurally separated.</p>
+    </details>
+    <details>
+      <summary>Does AI make the decisions?</summary>
+      <p>No. AI accelerates research, monitoring, drafting, and reporting — the work that makes continuous governance affordable for a mid-market firm. Every recommendation is made and owned by a human executive. Nothing material is decided autonomously.</p>
+    </details>
+    <details>
+      <summary>Who owns our data and the work product?</summary>
+      <p>You do. Roadmaps, decision records, evidence indexes, and documentation are yours, in exportable form, from day one. There is no hostage documentation.</p>
+    </details>
+    <details>
+      <summary>What does "evidence-producing" actually mean?</summary>
+      <p>Intended action, authority, execution, result, evaluation — recorded as work happens, not reconstructed at quarter-end. Your leadership, your insurer, your customers, and your auditors can inspect the same record.</p>
+    </details>
+    <details>
+      <summary>We're smaller than 20 people / larger than 150. Still a fit?</summary>
+      <p>Possibly. The assessment offers are the right starting point — if the diagnostic doesn't justify a retainer, you'll still have the facts and the plan. The honest answer comes from the diagnostic, not a sales call.</p>
+    </details>
+  </div>
+</section>
+
+<div class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Technology risk needs an owner.<br>Start with facts.</h2>
+    <p>Tell me about your organization — size, industry, and the deadline or pressure driving the conversation. I'll tell you honestly whether an assessment makes sense.</p>
+    <a class="btn" href="mailto:jdlongmire@outlook.com?subject=Virtual%20CIO%20on%20Demand%20—%20intro">Email JD directly</a>
+    <p style="margin-top:22px;font-size:14px;color:#9aa1c4">jdlongmire@outlook.com · Response within two business days</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 James (JD) Longmire · ThinxAI · Virtual CIO on Demand</div>
+    <div>Advisory only — not legal, tax, insurance, or investment advice. Engagement terms confirmed in writing before work begins.</div>
+  </div>
+</footer>
+
+</body>
+</html>
